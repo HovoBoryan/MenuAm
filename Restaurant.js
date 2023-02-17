@@ -1,7 +1,7 @@
 const  Shipper = require('./shipper')
 
 Food = {
-shaurma : "shaurma taq",
+shaurma : "shaurma",
 xorovac : "xorovac",
 bulki : "bulki",
 perashki : "perashki ",
