@@ -4,13 +4,21 @@ const User = require('./client.js');
 
 class MenuAm {
 #clients = []
-constructor() {
-
+constructor(food) {
+    this.food = food;
 }
-giveOrder(clientname, food) {
+    setFood(food) {
+        this.food = food;
+    }
+
+    getFood() {
+    return this.food;
+    }
+
+    giveOrder(clientname, food) {
 
     this.#clients.push(new User(clientname));
-    const restaurant = new Restaurant(food);
+    const restaurant = new Restaurant(this.getFood());
 
     if(restaurant.takeOrder(food) !== 0) { 
         restaurant.giveFoodShipper(food);

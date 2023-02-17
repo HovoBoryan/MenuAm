@@ -26,11 +26,11 @@ class User {
     this.#money -= count;
   }
   show_balance() {
-    console.log(`Balance: ${this.#money}`);
+    console.log(`Your balance: ${this.#money}`);
   }
 
   foodOrder(food) {
-  const order = new MenuAm();
+  const order = new MenuAm(food);
  
   return order.giveOrder(this.#name, food);
 }
