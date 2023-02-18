@@ -23,8 +23,13 @@ class Restaurant {
         this.#food = food;
     }
 
-    getCoockingFood() {
-        return this.#food;
+    getCoockingFood(food) {
+
+        if(this.getFood() === food) {
+            return this.#food;
+        } else {
+            return 0;    
+        }
     }
 }
 

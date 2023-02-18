@@ -1,7 +1,7 @@
 
 
 class MenuAm {
-#clients = []
+#clients;
 constructor(food) {
     this.food = food;
 }
@@ -15,20 +15,24 @@ constructor(food) {
 
     giveOrder(clientname, food) {
 
-    this.#clients.push(new User(clientname));
-    const restaurant = new Restaurant(this.getFood());
+   }
 
-    if(restaurant.takeOrder(food) !== 0) { 
-        restaurant.giveFoodShipper(food);
+   setClient() {
 
-        } else {
-        console.log("Sorry we can't delivery that food right now !!!...");
-        }
-}
+    }
 
-endDelivery() {
+    getClient() {
+    
+    }
 
-}
+    startDelivery() {
+    
+    }
+
+    
+    endDelivery() {
+
+    }
 
 }
 
