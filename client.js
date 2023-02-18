@@ -1,5 +1,4 @@
-const Bank = require('./Bank.js');
-const MenuAm = require('./MenuAm.js');
+
 class User {
   #name;
   #bank_id;
