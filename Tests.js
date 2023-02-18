@@ -5,18 +5,32 @@ const Bank = require('./Bank.js');
 const MenuAm = require('./MenuAm.js')
 
 
-function TesttakeOrder() {
+function TestSetForCoocking() {
  const Parvana = new Restaurant(Food.xorovac);
-    if(Parvana.takeOrder(Food.xorovac) !== Food.xorovac) {
+ Parvana.setForCoocking(Food.xorovac);
+    if(Parvana.getCoockingFood() !== Food.xorovac ) {
         console.log("Test takeorder() failed !!!..");
         } else {
         console.log("Test takeOrder() passed.");
     }   
 }
 
-//TestgiveFoodShipper(food) 
+function TestgiveFoodShipper() {
+const Parvana = new Restaurant(Food.xorovac);
+Parvana.takeOrder(Food.xorovac);
+Parvana.giveFoodShipper(Food.xorovac);
+}
 
-//TestgetFoodforDelivery(food) 
+function TestgetFoodforDelivery() {
+   
+    const shipper = new Shipper();
+    shipper.setFoodforDelivery(Food.xorovac);
+    if(shipper.getFoodforDelivery() !== Food.xorovac) {
+        console.log("Test getFoodforDelivery() failed !!!..");
+    } else {
+        console.log("Test getFoodforDelivery() passed .");
+    }   
+}
 
 //TestendDelivery() 
 
@@ -30,10 +44,12 @@ function TesttakeOrder() {
 
 function TestAlltests() {
 
-    TesttakeOrder()
+    TestSetForCoocking()
+    TestgetFoodforDelivery()
 }
 
 
 
 TestAlltests();
+
 

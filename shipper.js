@@ -1,12 +1,15 @@
 class Shipper {
     #food;
-    constructer()
-    {
+    constructer() {
         this.#food = null;
     }
-    getFoodforDelivery(food) {
+    
+    setFoodforDelivery(food) {
     this.#food = food;
-    console.log(food + "  <<<< motsa shut tanem tex hascnem >>>>");
+    }
+
+    getFoodforDelivery() {
+        return this.#food;
     }
 
     endDelivery() {

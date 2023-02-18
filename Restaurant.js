@@ -10,22 +10,21 @@ jur : "jur"
 }
 
 class Restaurant {
-    
-    constructor(food) {
-    this.food = food;
+    #food;
+    constructor() {
+    this.#food = null;
     }
 
-    takeOrder(orderFood) {
-        if(orderFood === this.food) {
-        return this.food;
-        } else {
-            return 0;
-        }    
+    getFood() {
+        return this.#food;
     }
 
-    giveFoodShipper(food) {
-    const shipper = new Shipper()
-    shipper.getFoodforDelivery(food);
+    setForCoocking(food) {
+        this.#food = food;
+    }
+
+    getCoockingFood() {
+        return this.#food;
     }
 }
 
