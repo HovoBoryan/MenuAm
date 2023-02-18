@@ -32,8 +32,6 @@ endDelivery() {
 
 }
 
-const Hovo = new User("Hovo");
-Hovo.foodOrder("qabab");
 
 
 module.exports = MenuAm
