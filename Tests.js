@@ -7,8 +7,8 @@ const MenuAm = require('./MenuAm.js')
 
 function TestMenusetfood() {
     const NewOrder = new MenuAm();
-    NewOrder.setFood(Food.xorovac);
-    if(NewOrder.getFood() !== "xorovac") {
+    NewOrder.setOrder(Food.xorovac);
+    if(NewOrder.getOrder() !== "xorovac") {
         console.log("Test setFood() failed !!!..");
     } else {
         console.log("Test setFood() passed .");

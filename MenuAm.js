@@ -5,11 +5,11 @@ class MenuAm {
 constructor(food) {
     this.food = food;
 }
-    setFood(food) {
+    setOrder(food) {
         this.food = food;
     }
 
-    getFood() {
+    getOrder() {
     return this.food;
     }
 
