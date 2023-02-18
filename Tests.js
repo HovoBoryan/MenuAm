@@ -5,7 +5,7 @@ const Bank = require('./Bank.js');
 const MenuAm = require('./MenuAm.js')
 
 
-function TestMenusetfood() {
+function TestMenusetOrder() {
     const NewOrder = new MenuAm();
     NewOrder.setOrder(Food.xorovac);
     if(NewOrder.getOrder() !== "xorovac") {
@@ -24,12 +24,34 @@ function TestSetForCoocking() {
         console.log("Test takeOrder() passed.");
     }   
 }
+function Test_set_get_foodfordelivery() {
+    const shipper = new Shipper();
+    shipper.setFoodforDelivery(Food.xorovac);
+    if(shipper.getFoodforDelivery() !== "xorovac") {
+        console.log('Test set or get FoodforDelivery() failed !!!...');
+    } else {
+        console.log("Test set or get FoodforDelivery() passed .");
+    }
+}
 
-function TestgiveFoodShipper() {
+function  TestendDelivery() {
+    const shipper = new Shipper();
+    shipper.setFoodforDelivery(Food.qabab);
+    shipper.endDelivery();
+    if(shipper.getFoodforDelivery() !== null) {
+        console.log("Test endDelivery() failed !!!...");
+    } else {
+        console.log("Test endDelivery() passed .");
+    }
+}
+
+
+
+/* function TestgiveFoodShipper() {
 const Parvana = new Restaurant(Food.xorovac);
 Parvana.takeOrder(Food.xorovac);
 Parvana.giveFoodShipper(Food.xorovac);
-}
+}*/
 
 function TestgetFoodforDelivery() {
    
@@ -53,13 +75,15 @@ function TestgetFoodforDelivery() {
 //TestMenuendDelivery()
 
 function TestAlltests() {
-    TestMenusetfood()
+
+    TestMenusetOrder()
     TestSetForCoocking()
     TestgetFoodforDelivery()
+    Test_set_get_foodfordelivery()
+    TestendDelivery()
 }
 
 
 
-TestAlltests();
-
+//TestAlltests();
 
