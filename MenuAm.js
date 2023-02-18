@@ -1,9 +1,11 @@
 
 
 class MenuAm {
-#clients;
+#clients
+#order_list
 constructor(food) {
     this.food = food;
+    this.#order_list = new Map();
 }
     setOrder(food) {
         this.food = food;
@@ -17,7 +19,7 @@ constructor(food) {
 
    }
 
-   setClient() {
+    setClient() {
 
     }
 
@@ -29,7 +31,7 @@ constructor(food) {
     
     }
 
-    
+
     endDelivery() {
 
     }
