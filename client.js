@@ -10,6 +10,7 @@ class User {
     this.#bank_id = null;
     this.#MyFridge = null;
   }
+  
   setMyfridge(food) {
     this.#MyFridge = food;
   }
@@ -17,21 +18,27 @@ class User {
   getfoodfromFridge() {
     return this.#MyFridge;
   }
+
   getname() {
     return this.#name;
   }
+
   setbank_id(bank_id) {
     this.#bank_id = bank_id;
   }
+
   getbank_id() {
     return this.#bank_id;
   }
+
   add_money(count) {
     this.#money += count;
   }
+
   remove_money(count) {
     this.#money -= count;
   }
+
   show_balance() {
     console.log(`Your balance: ${this.#money}`);
   }
@@ -40,7 +47,7 @@ class User {
     Menuam.setOrderfromUser(this.getname(),food)
   }
 
-takeFoodOrder(shipper) {
+  takeFoodOrder(shipper) {
     this.setMyfridge(shipper.endDelivery());
   }
 

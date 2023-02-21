@@ -1,9 +1,10 @@
 
 
 class MenuAm {
-#clients
+#Cashbox
 #Food_order_list
 constructor() {
+    this.#Cashbox = 0;
     this.#Food_order_list = new Map();
 }
     setOrderfromUser(name, food) {
@@ -19,6 +20,14 @@ constructor() {
         restaurant.setOrder(this.getOrderedFoodbyname(name));
     }
 
+    setMoneyToCashbox(amount) {
+        this.#Cashbox += amount;
+    }
+
+    getMoneyoutCashbox(amouth) {
+        this.#Cashbox -= amouth;
+        return amouth;
+    }
    
 }
 
