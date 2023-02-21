@@ -87,9 +87,9 @@ function TestifClientTakeFoodOrder() {
     restaurant.setFoodforDelivery(curier);
     client.takeFoodOrder(curier);
     if(client.getfoodfromFridge() !== "xorovac") {
-        console.log("failed !!!..");
+        console.log("Test takeFoodOrder() failed !!!..");
     } else {
-        console.log("passed .");
+        console.log("Test takeFoodOrder() passed .");
     }
 }
 
