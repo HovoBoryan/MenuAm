@@ -13,8 +13,9 @@ class Shipper {
     }
 
     endDelivery() {
-    this.getFoodforDelivery();    
+    let food = this.getFoodforDelivery();    
     this.#food = null;
+    return food;
     }
 
 }

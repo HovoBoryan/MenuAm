@@ -6,18 +6,17 @@ class MenuAm {
 constructor() {
     this.#Food_order_list = new Map();
 }
-    setOrderfromUser(user,food) {
-        this.#Food_order_list.set(user.getname(), food);
+    setOrderfromUser(name, food) {
+        this.#Food_order_list.set(name, food);
     }
 
-    getOrderedFoodbyname(user) {
-        return this.#Food_order_list.get(user.getname());
+    getOrderedFoodbyname(name) {
+        return this.#Food_order_list.get(name);
     }
 
 
-    startOrder(user, food, restaurant) {
-        this.setOrderfromUser(user,food);
-        restaurant.setOrder(getOrderedFoodbyname(user.getname()));
+    startOrderRestaurant(name,restaurant ) {
+        restaurant.setOrder(this.getOrderedFoodbyname(name));
     }
 
    

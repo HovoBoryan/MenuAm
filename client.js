@@ -3,11 +3,19 @@ class User {
   #name;
   #bank_id;
   #money;
-
+  #MyFridge;
   constructor(name){ 
     this.#name = name;
     this.#money = 0;
     this.#bank_id = null;
+    this.#MyFridge = null;
+  }
+  setMyfridge(food) {
+    this.#MyFridge = food;
+  }
+
+  getfoodfromFridge() {
+    return this.#MyFridge;
   }
   getname() {
     return this.#name;
@@ -28,14 +36,14 @@ class User {
     console.log(`Your balance: ${this.#money}`);
   }
 
-  foodOrder(Menuam, food, restaurant) { 
-    Menuam.startOrder(this.getname(), restaurant, food);
+  foodOrder(Menuam, food) { 
+    Menuam.setOrderfromUser(this.getname(),food)
   }
 
-/*takeFoodOrder(Menuam) {
-    Menuam.give_getOrderToUser(this)
+takeFoodOrder(shipper) {
+    this.setMyfridge(shipper.endDelivery());
   }
-*/
+
 };
 
 

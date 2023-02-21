@@ -50,8 +50,8 @@ function TestsetFoodforDelivery() {
 function Testset_get_Order_MenuAm() {
     const client = new User("Valodik");
     const Menuam = new MenuAm();
-    Menuam.setOrderfromUser(client,Food.kola);
-    if(Menuam.getOrderedFoodbyname(client) !== "kola") {
+    Menuam.setOrderfromUser("Valodik",Food.kola);
+    if(Menuam.getOrderedFoodbyname("Valodik") !== "kola") {
         console.log("Test set or get OrderMenuAm() failed !!!... ");
     } else {
         console.log("Test set or get OrderMenuAm() passed . ");
@@ -63,9 +63,35 @@ function TestClientfoodOrder() {
     const menu = new MenuAm();
     const restaurant = new Restaurant();
     const curier = new Shipper();
-    
+
+    client.foodOrder(menu, Food.xorovac);
+    menu.startOrderRestaurant("Valodik", restaurant );
+    restaurant.setFoodforDelivery(curier);
+
+    if(curier.getFoodforDelivery() !== "xorovac") {
+        console.log("Test foodOrder() failed !!!...");
+    } else {
+        console.log("Test foodOrder() passed .");
+    }
+
 }
 
+function TestifClientTakeFoodOrder() {
+    const client = new User("Valodik");
+    const menu = new MenuAm();
+    const restaurant = new Restaurant();
+    const curier = new Shipper();
+
+    client.foodOrder(menu, Food.xorovac);
+    menu.startOrderRestaurant("Valodik", restaurant );
+    restaurant.setFoodforDelivery(curier);
+    client.takeFoodOrder(curier);
+    if(client.getfoodfromFridge() !== "xorovac") {
+        console.log("failed !!!..");
+    } else {
+        console.log("passed .");
+    }
+}
 
 function TestAllTests() {
 
@@ -74,6 +100,8 @@ function TestAllTests() {
     TestgetsetOrderRestaurant()
     TestsetFoodforDelivery();
     Testset_get_Order_MenuAm();
+    TestClientfoodOrder();
+    TestifClientTakeFoodOrder()
 }
 
 
