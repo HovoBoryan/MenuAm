@@ -2,30 +2,25 @@
 
 class MenuAm {
 #clients
-#order_list
+#Food_order_list
 constructor() {
-    this.food = null;
-    this.#order_list = new Map();
+    this.#Food_order_list = new Map();
 }
     setOrderfromUser(user,food) {
-        this.food = food;
-        this.#order_list.set(user.getname(), food);
+        this.#Food_order_list.set(user.getname(), food);
     }
 
-    getOrderUsername(user) {
-    return this.#order_list.get(user.getname());
-    }
-
-
-    startOrder(restaurant, food) {
-        restaurant.setOrder(food);
+    getOrderedFoodbyname(user) {
+        return this.#Food_order_list.get(user.getname());
     }
 
 
-    endDelivery() {
-
+    startOrder(user, food, restaurant) {
+        this.setOrderfromUser(user,food);
+        restaurant.setOrder(getOrderedFoodbyname(user.getname()));
     }
 
+   
 }
 
 

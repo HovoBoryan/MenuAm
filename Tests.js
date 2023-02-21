@@ -47,15 +47,23 @@ function TestsetFoodforDelivery() {
     }
 } 
 
-function set_get_Order_MenuAm() {
+function Testset_get_Order_MenuAm() {
     const client = new User("Valodik");
     const Menuam = new MenuAm();
     Menuam.setOrderfromUser(client,Food.kola);
-    if(Menuam.getOrderUsername(client) !== "kola") {
+    if(Menuam.getOrderedFoodbyname(client) !== "kola") {
         console.log("Test set or get OrderMenuAm() failed !!!... ");
     } else {
         console.log("Test set or get OrderMenuAm() passed . ");
     }
+}
+
+function TestClientfoodOrder() {
+    const client = new User("Valodik");
+    const menu = new MenuAm();
+    const restaurant = new Restaurant();
+    const curier = new Shipper();
+    
 }
 
 
@@ -65,7 +73,7 @@ function TestAllTests() {
     TestendDelivery()
     TestgetsetOrderRestaurant()
     TestsetFoodforDelivery();
-    set_get_Order_MenuAm();
+    Testset_get_Order_MenuAm();
 }
 
 

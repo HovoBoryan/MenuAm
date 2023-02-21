@@ -28,8 +28,8 @@ class User {
     console.log(`Your balance: ${this.#money}`);
   }
 
-  foodOrder(Menuam,food) { 
-    Menuam.setOrderfromUser(this.getname(), food);
+  foodOrder(Menuam, food, restaurant) { 
+    Menuam.startOrder(this.getname(), restaurant, food);
   }
 
 /*takeFoodOrder(Menuam) {
