@@ -9,13 +9,13 @@ class User {
     this.#money = 0;
     this.#bank_id = null;
   }
-  get name() {
+  getname() {
     return this.#name;
   }
-  set bank_id(bank_id) {
+  setbank_id(bank_id) {
     this.#bank_id = bank_id;
   }
-  get bank_id() {
+  getbank_id() {
     return this.#bank_id;
   }
   add_money(count) {
@@ -28,12 +28,14 @@ class User {
     console.log(`Your balance: ${this.#money}`);
   }
 
-  foodOrder(food) {
-  const order = new MenuAm(food);
- 
-  return order.giveOrder(this.#name, food);
-}
+  foodOrder(Menuam,food) { 
+    Menuam.setOrderfromUser(this.getname(), food);
+  }
 
+/*takeFoodOrder(Menuam) {
+    Menuam.give_getOrderToUser(this)
+  }
+*/
 };
 
 

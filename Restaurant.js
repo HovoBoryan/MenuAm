@@ -15,21 +15,16 @@ class Restaurant {
     this.#food = null;
     }
 
-    getFood() {
+    getOrder() {
         return this.#food;
     }
 
-    setForCoocking(food) {
+    setOrder(food) {
         this.#food = food;
     }
 
-    getCoockingFood(food) {
-
-        if(this.getFood() === food) {
-            return this.#food;
-        } else {
-            return 0;    
-        }
+   setFoodforDelivery(shipper) {
+        shipper.setFoodforDelivery(this.getOrder());
     }
 }
 

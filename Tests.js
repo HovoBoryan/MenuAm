@@ -5,85 +5,70 @@ const Bank = require('./Bank.js');
 const MenuAm = require('./MenuAm.js')
 
 
-function TestMenusetOrder() {
-    const NewOrder = new MenuAm();
-    NewOrder.setOrder(Food.xorovac);
-    if(NewOrder.getOrder() !== "xorovac") {
-        console.log("Test setFood() failed !!!..");
-    } else {
-        console.log("Test setFood() passed .");
-    }
-}
-
-function TestSetForCoocking() {
- const Parvana = new Restaurant(Food.xorovac);
- Parvana.setForCoocking(Food.xorovac);
-    if(Parvana.getCoockingFood() !== "xorovac" ) {
-        console.log("Test takeorder() failed !!!..");
-        } else {
-        console.log("Test takeOrder() passed.");
-    }   
-}
-function Test_set_get_foodfordelivery() {
+function TestShipper_get_set_foodforDelivery() {
     const shipper = new Shipper();
     shipper.setFoodforDelivery(Food.xorovac);
     if(shipper.getFoodforDelivery() !== "xorovac") {
-        console.log('Test set or get FoodforDelivery() failed !!!...');
+        console.log("Test set_getfoodForDelivery failed !..");
     } else {
-        console.log("Test set or get FoodforDelivery() passed .");
+        console.log("Test set_getfoodForDelivery passed.");
     }
 }
 
-function  TestendDelivery() {
-    const shipper = new Shipper();
-    shipper.setFoodforDelivery(Food.qabab);
-    shipper.endDelivery();
-    if(shipper.getFoodforDelivery() !== null) {
-        console.log("Test endDelivery() failed !!!...");
-    } else {
-        console.log("Test endDelivery() passed .");
-    }
-}
-
-
-
-/* function TestgiveFoodShipper() {
-const Parvana = new Restaurant(Food.xorovac);
-Parvana.takeOrder(Food.xorovac);
-Parvana.giveFoodShipper(Food.xorovac);
-}*/
-
-function TestgetFoodforDelivery() {
-   
+function TestendDelivery() {
     const shipper = new Shipper();
     shipper.setFoodforDelivery(Food.xorovac);
-    if(shipper.getFoodforDelivery() !== "xorovac") {
-        console.log("Test getFoodforDelivery() failed !!!..");
+    if(shipper.endDelivery() !== "xorovac" && shipper.getFoodforDelivery() !== null) {
+        console.log("Test endDelivery() failed !..");
     } else {
-        console.log("Test getFoodforDelivery() passed .");
-    }   
+        console.log("Test endDelivery() passed");
+    }
 }
 
-//TestendDelivery() 
+function TestgetsetOrderRestaurant() {
+    const restaurant = new Restaurant();
+    restaurant.setOrder(Food.xorovac);
+    if(restaurant.getOrder() !== "xorovac") {
+        console.log("Test getsetOrder() failed !...");
+    } else {
+        console.log("Test getsetOrder() passed .");
+    }
+}
 
-//TestMenusetFood(food)
+function TestsetFoodforDelivery() {
+    const restaurant = new Restaurant();
+    const shipper = new Shipper();
+    restaurant.setOrder(Food.xorovac);
+    restaurant.setFoodforDelivery(shipper);
+    if(shipper.getFoodforDelivery() !== "xorovac") {
+        console.log("Test  setFoodforDelivery() failed !...");
+    } else {
+        console.log("Test  setFoodforDelivery() passed .");
+    }
+} 
 
-//TestMenugetFood()
+function set_get_Order_MenuAm() {
+    const client = new User("Valodik");
+    const Menuam = new MenuAm();
+    Menuam.setOrderfromUser(client,Food.kola);
+    if(Menuam.getOrderUsername(client) !== "kola") {
+        console.log("Test set or get OrderMenuAm() failed !!!... ");
+    } else {
+        console.log("Test set or get OrderMenuAm() passed . ");
+    }
+}
 
-//TestMenugiveOrder(clientname, food)
 
-//TestMenuendDelivery()
+function TestAllTests() {
 
-function TestAlltests() {
-
-    TestMenusetOrder()
-    TestSetForCoocking()
-    TestgetFoodforDelivery()
-    Test_set_get_foodfordelivery()
+    TestShipper_get_set_foodforDelivery();
     TestendDelivery()
+    TestgetsetOrderRestaurant()
+    TestsetFoodforDelivery();
+    set_get_Order_MenuAm();
 }
 
 
 
-//TestAlltests();
-
+ //TestAllTests();
+ 

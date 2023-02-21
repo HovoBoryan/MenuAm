@@ -3,32 +3,22 @@
 class MenuAm {
 #clients
 #order_list
-constructor(food) {
-    this.food = food;
+constructor() {
+    this.food = null;
     this.#order_list = new Map();
 }
-    setOrder(food) {
+    setOrderfromUser(user,food) {
         this.food = food;
+        this.#order_list.set(user.getname(), food);
     }
 
-    getOrder() {
-    return this.food;
+    getOrderUsername(user) {
+    return this.#order_list.get(user.getname());
     }
 
-    giveOrder(clientname, food) {
 
-   }
-
-    setClient() {
-
-    }
-
-    getClient() {
-    
-    }
-
-    startDelivery() {
-    
+    startOrder(restaurant, food) {
+        restaurant.setOrder(food);
     }
 
 
