@@ -1,5 +1,6 @@
 class Shipper {
     #food;
+    #cashPocket = 0;
     constructer() {
         this.#food = null;
     }
@@ -16,6 +17,14 @@ class Shipper {
     let food = this.getFoodforDelivery();    
     this.#food = null;
     return food;
+    }
+
+    setcashPocket(money) {
+        this.#cashPocket += money;
+    }
+
+    getBalanceCashPoket() {
+        return this.#cashPocket;
     }
 
 }

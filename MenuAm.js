@@ -1,10 +1,11 @@
 
 
 class MenuAm {
+
 #Cashbox
 #Food_order_list
 #priceList
-#income
+
 constructor() {
     this.foodPricelist = [ 
     ["shaurma", 1000],
@@ -15,6 +16,7 @@ constructor() {
     this.#Cashbox = 0;
     this.#Food_order_list = new Map();
 }
+
     setOrderfromUser(name, food) {
         this.#Food_order_list.set(name, food);
     }
@@ -23,13 +25,10 @@ constructor() {
         return this.#Food_order_list.get(name);
     }
 
-
     startOrderRestaurant(name,restaurant ) {
         restaurant.setOrder(this.getOrderedFoodbyname(name));
         restaurant.setmoneyInCashBox(this.getMoneyoutCashbox(this.food_Prices(this.getOrderedFoodbyname(name) )))
     }
-
-
 
     food_Prices(foodname) {
         return this.#priceList.get(foodname);
@@ -48,8 +47,7 @@ constructor() {
         return this.#Cashbox;
     }
 
-   
-   incomeCalculator(money) {
+    incomeCalculator(money) {
         return money / 5;
     }
    

@@ -98,8 +98,9 @@ function TestifClientTakeFoodOrder() {
     menu.startOrderRestaurant("Valodik", restaurant );
     restaurant.setFoodforDelivery(curier);
     client.takeFoodOrder(curier);
-    if(client.getfoodfromFridge() !== "xorovac" || menu.menuamCashBoxcontent() !== 400 || client.getbalance() !== 3000 || restaurant.getBalanceofCashBox() !== 1600) {
-        console.log("Test takeFoodOrder() failed !!!..");
+    if(client.getfoodfromFridge() !== "xorovac" || menu.menuamCashBoxcontent() !== 400 || client.getbalance() !== 3000 
+       || restaurant.getBalanceofCashBox() !== 1440 || curier.getBalanceCashPoket() !== 160) {
+        console.log(curier.getBalanceCashPoket() + "Test takeFoodOrder() failed !!!..");
     } else {
         console.log("Test takeFoodOrder() passed .");
     }
@@ -119,4 +120,7 @@ function TestAllTests() {
 
 
 
- TestAllTests();
+ //TestAllTests();
+ TestifClientTakeFoodOrder();
+
+ 

@@ -4,25 +4,34 @@ Food = {
 shaurma : "shaurma",
 xorovac : "xorovac",
 perashki : "perashki ",
-kola : "kola",
+kola : "kola"
 }
 
 class Restaurant {
     #food;
-    #restaurantCashBox
+    #restaurantCashBox;
+    #deliveryCash
     constructor() {
     this.#food = null;
     this.#restaurantCashBox = 0;
+    this.#deliveryCash = 0;
     }
 
     setmoneyInCashBox(money) {
-        this.#restaurantCashBox += money;
+        this.#restaurantCashBox = this.RestaurantincomeCalculator(money);
+        this.#deliveryCash = (money - this.RestaurantincomeCalculator(money));
     }
 
     getBalanceofCashBox() {
         return this.#restaurantCashBox;
     }
-    
+
+    getMoneyForShipper() {
+        let money = this.#deliveryCash;
+        this.#deliveryCash = 0;
+        return money;
+    }
+
     getOrder() {
         return this.#food;
     }
@@ -33,6 +42,11 @@ class Restaurant {
 
    setFoodforDelivery(shipper) {
         shipper.setFoodforDelivery(this.getOrder());
+        shipper.setcashPocket(this.getMoneyForShipper());
+    }
+
+    RestaurantincomeCalculator(money) {
+        return money * 0.9;
     }
 }
 
