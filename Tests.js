@@ -76,6 +76,17 @@ function TestClientfoodOrder() {
 
 }
 
+function TestUserfunctions() {
+    const user = new User("Valodik");
+    user.add_money(10000);
+    if (user.getbalance() !== 10000 || user.getname() !== "Valodik") {
+        console.log("Test add_money(), getbalance(), getname() failed !...");
+    } else {
+        console.log("Test add_money(), getbalance(), getname() passed .");
+    }
+
+}
+
 function TestifClientTakeFoodOrder() {
     const client = new User("Valodik");
     const menu = new MenuAm();
@@ -86,7 +97,7 @@ function TestifClientTakeFoodOrder() {
     menu.startOrderRestaurant("Valodik", restaurant );
     restaurant.setFoodforDelivery(curier);
     client.takeFoodOrder(curier);
-    if(client.getfoodfromFridge() !== "xorovac") {
+    if(client.getfoodfromFridge() !== "xorovac" || menu.menuamCashBoxcontent() !== 2000) {
         console.log("Test takeFoodOrder() failed !!!..");
     } else {
         console.log("Test takeFoodOrder() passed .");
@@ -101,7 +112,8 @@ function TestAllTests() {
     TestsetFoodforDelivery();
     Testset_get_Order_MenuAm();
     TestClientfoodOrder();
-    TestifClientTakeFoodOrder()
+    TestifClientTakeFoodOrder();
+    TestUserfunctions();
 }
 
 

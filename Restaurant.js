@@ -3,10 +3,8 @@ const  Shipper = require('./shipper')
 Food = {
 shaurma : "shaurma",
 xorovac : "xorovac",
-bulki : "bulki",
 perashki : "perashki ",
 kola : "kola",
-jur : "jur"
 }
 
 class Restaurant {
