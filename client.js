@@ -55,19 +55,4 @@ class User {
 
 };
 
-
-
-/*    const Ameria = new Bank();
-
-const Hovo = new User('Hovo');
-
-Hovo.add_money(90000);
-
-Hovo.bank_id = Ameria.create_id();
-
-Ameria.deposite(Hovo, 5000);
-Ameria.withdraw(Hovo, 8000);
-
-Hovo.show_balance();   */
-
 module.exports = User

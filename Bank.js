@@ -12,7 +12,6 @@ class Bank {
   
     deposite(user, amount) { // NERDNUM
       let id = user.bank_id;
-  
       let balance = this.id_list.get(id) ?? 0;
       user.remove_money(amount);
       this.id_list.set(id, balance + amount);

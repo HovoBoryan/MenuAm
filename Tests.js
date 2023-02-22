@@ -5,6 +5,22 @@ const Bank = require('./Bank.js');
 const MenuAm = require('./MenuAm.js')
 
 
+
+
+function TestbankDeposite() {
+    const bank = new Bank();
+    const client = new User("Valod");
+    client.setbank_id(bank.create_id());
+    client.add_money(10000);
+    bank.deposite(client, 10000);
+    bank.withdraw(client, 5000);
+    if(client.getbalance() !== 5000) {
+        console.log("Test deposite(), withdrow() failed !...");
+    } else {
+        console.log("Test deposite(), withdrow() passed .");
+    }
+}
+
 function TestShipper_get_set_foodforDelivery() {
     const shipper = new Shipper();
     shipper.setFoodforDelivery(Food.xorovac);
@@ -117,10 +133,10 @@ function TestAllTests() {
     TestClientfoodOrder();
     TestifClientTakeFoodOrder();
     TestUserfunctions();
+    TestbankDeposite()
 }
 
 
 
- TestAllTests();
- 
+ //TestAllTests();
  
