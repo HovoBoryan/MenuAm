@@ -7,7 +7,7 @@ const MenuAm = require('./MenuAm.js')
 
 
 
-function TestbankDeposite() {
+function Testbankfunctions() {
     const bank = new Bank();
     const client = new User("Valod");
     client.setbank_id(bank.create_id());
@@ -133,7 +133,7 @@ function TestAllTests() {
     TestClientfoodOrder();
     TestifClientTakeFoodOrder();
     TestUserfunctions();
-    TestbankDeposite();
+    Testbankfunctions();
 }
 
 
