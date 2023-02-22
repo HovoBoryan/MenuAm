@@ -98,7 +98,7 @@ function TestifClientTakeFoodOrder() {
     menu.startOrderRestaurant("Valodik", restaurant );
     restaurant.setFoodforDelivery(curier);
     client.takeFoodOrder(curier);
-    if(client.getfoodfromFridge() !== "xorovac" || menu.menuamCashBoxcontent() !== 2000 || client.getbalance() !== 3000) {
+    if(client.getfoodfromFridge() !== "xorovac" || menu.menuamCashBoxcontent() !== 0 || client.getbalance() !== 3000 || restaurant.getBalanceofCashBox() !== 2000) {
         console.log("Test takeFoodOrder() failed !!!..");
     } else {
         console.log("Test takeFoodOrder() passed .");
