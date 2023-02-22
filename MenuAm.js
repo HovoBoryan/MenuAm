@@ -14,7 +14,6 @@ constructor() {
     this.#priceList = new Map(this.foodPricelist);
     this.#Cashbox = 0;
     this.#Food_order_list = new Map();
-    this.#income = 0;
 }
     setOrderfromUser(name, food) {
         this.#Food_order_list.set(name, food);
@@ -37,30 +36,22 @@ constructor() {
     }
 
     setMoneyToCashbox(money) {
-        this.#Cashbox += money ;
+        this.#Cashbox += money;
     }
 
     getMoneyoutCashbox(amouth) {
-        this.#Cashbox -= amouth;
-        return amouth;
+        this.#Cashbox -= (amouth - this.incomeCalculator(amouth)) ;
+       return amouth - this.incomeCalculator(amouth);
     }
 
     menuamCashBoxcontent() {
         return this.#Cashbox;
     }
 
-    setIncomeMoney(money) {
-        this.#income += money;
+   
+   incomeCalculator(money) {
+        return money / 5;
     }
-
-    balanceIncome() {
-        return this.#income;
-    }
-
-    incomeCalculator(money) {
-    
-    }
-
    
 }
 
