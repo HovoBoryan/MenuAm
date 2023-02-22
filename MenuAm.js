@@ -12,6 +12,7 @@ constructor() {
     ["xorovac", 2000],
     ["perashki", 200],
     ["kola", 350] ];
+
     this.#priceList = new Map(this.foodPricelist);
     this.#Cashbox = 0;
     this.#Food_order_list = new Map();
@@ -49,8 +50,7 @@ constructor() {
 
     incomeCalculator(money) {
         return money / 5;
-    }
-   
+    }  
 }
 
 
