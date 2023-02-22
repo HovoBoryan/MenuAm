@@ -37,14 +37,16 @@ class User {
 
   remove_money(count) {
     this.#money -= count;
+    return count;
   }
 
-  show_balance() {
-    console.log(`Your balance: ${this.#money}`);
+  getbalance() {
+    return this.#money; 
   }
 
   foodOrder(Menuam, food) { 
     Menuam.setOrderfromUser(this.getname(),food)
+    Menuam.setMoneyToCashbox(this.remove_money(Menuam.food_Prices(food)));
   }
 
   takeFoodOrder(shipper) {
