@@ -126,14 +126,14 @@ function TestifClientTakeFoodOrder() {
 function TestAllTests() {
 
     TestShipper_get_set_foodforDelivery();
-    TestendDelivery()
-    TestgetsetOrderRestaurant()
+    TestendDelivery();
+    TestgetsetOrderRestaurant();
     TestsetFoodforDelivery();
     Testset_get_Order_MenuAm();
     TestClientfoodOrder();
     TestifClientTakeFoodOrder();
     TestUserfunctions();
-    TestbankDeposite()
+    TestbankDeposite();
 }
 
 
