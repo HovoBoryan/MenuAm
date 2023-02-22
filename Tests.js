@@ -93,11 +93,12 @@ function TestifClientTakeFoodOrder() {
     const restaurant = new Restaurant();
     const curier = new Shipper();
 
+    client.add_money(5000);
     client.foodOrder(menu, Food.xorovac);
     menu.startOrderRestaurant("Valodik", restaurant );
     restaurant.setFoodforDelivery(curier);
     client.takeFoodOrder(curier);
-    if(client.getfoodfromFridge() !== "xorovac" || menu.menuamCashBoxcontent() !== 2000) {
+    if(client.getfoodfromFridge() !== "xorovac" || menu.menuamCashBoxcontent() !== 2000 || client.getbalance() !== 3000) {
         console.log("Test takeFoodOrder() failed !!!..");
     } else {
         console.log("Test takeFoodOrder() passed .");
@@ -119,4 +120,4 @@ function TestAllTests() {
 
 
  //TestAllTests();
- 
+ TestifClientTakeFoodOrder()
